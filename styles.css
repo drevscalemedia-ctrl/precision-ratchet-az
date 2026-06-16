@@ -366,6 +366,37 @@ h1, h2, h3, h4 {
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+/* ---------- Text animations ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+/* Hero copy staggered entrance on load */
+.hero__copy > * { opacity: 0; animation: fadeUp 0.7s var(--ease) both; }
+.hero__eyebrow { animation-delay: 0.08s; }
+.hero__title   { animation-delay: 0.22s; }
+.hero__sub     { animation-delay: 0.38s; }
+.hero__actions { animation-delay: 0.54s; }
+.hero__trust   { animation-delay: 0.68s; }
+
+/* Animated shimmer across the red accent words */
+.accent {
+  background: linear-gradient(100deg, var(--red) 0%, #ff8f93 35%, var(--red) 70%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+@keyframes shimmer { to { background-position: -220% 0; } }
+
+/* Word-by-word fade-up for section titles when revealed */
+.section__title .w, .welcome h2 .w {
+  display: inline-block; opacity: 0; transform: translateY(0.5em);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.section__head.is-visible .section__title .w,
+.welcome__copy.is-visible h2 .w { opacity: 1; transform: none; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; gap: 40px; padding: 54px 22px 70px; }
@@ -416,4 +447,7 @@ h1, h2, h3, h4 {
   .gallery__item img, .card__media img, .about__media img { transition: none; }
   .hero__frame img { animation: none; }
   .hero__frame::after, .about__frame::after, .card__media::after, .gallery__item::before { display: none; }
+  .hero__copy > * { opacity: 1; animation: none; }
+  .accent { animation: none; }
+  .section__title .w, .welcome h2 .w { opacity: 1; transform: none; transition: none; }
 }

@@ -25,8 +25,23 @@
   }
 
   // Scroll reveal
+  // Wrap section/welcome titles word-by-word for a staggered text reveal
+  var titles = document.querySelectorAll(".section__title, .welcome h2");
+  titles.forEach(function (title) {
+    var words = title.textContent.trim().split(/\s+/);
+    title.textContent = "";
+    words.forEach(function (word, i) {
+      var span = document.createElement("span");
+      span.className = "w";
+      span.textContent = word;
+      span.style.transitionDelay = i * 0.06 + "s";
+      title.appendChild(span);
+      if (i < words.length - 1) title.appendChild(document.createTextNode(" "));
+    });
+  });
+
   var revealEls = document.querySelectorAll(
-    ".pillar, .card, .welcome__stat, .gallery__item, .about__media, .about__copy, .quotes figure, .contact__info, .form, .section__head"
+    ".pillar, .card, .welcome__copy, .welcome__stat, .gallery__item, .about__media, .about__copy, .quotes figure, .contact__info, .form, .section__head"
   );
   revealEls.forEach(function (el) { el.classList.add("reveal"); });
 
