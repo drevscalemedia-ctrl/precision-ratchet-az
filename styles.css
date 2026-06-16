@@ -74,14 +74,17 @@ h1, h2, h3 {
   border-bottom: 1px solid var(--border);
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand__logo { height: 50px; width: auto; }
+.brand__tag {
+  color: var(--muted); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase;
+  font-weight: 600; padding-left: 14px; border-left: 1px solid var(--border);
+}
 .brand__mark {
   width: 42px; height: 42px; display: grid; place-items: center;
   background: var(--primary); color: #fff; font-family: "Oswald", sans-serif; font-weight: 700;
   border-radius: 11px; font-size: 1.05rem; box-shadow: 0 8px 20px -8px var(--primary);
 }
-.brand__text strong { display: block; font-size: 1.05rem; letter-spacing: 0.3px; font-family: "Oswald", sans-serif; text-transform: uppercase; }
-.brand__text small { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; }
 .nav { display: flex; align-items: center; gap: 26px; }
 .nav a { color: var(--muted); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
 .nav a:hover { color: var(--text); }
@@ -225,7 +228,8 @@ h1, h2, h3 {
 /* ---------- Footer ---------- */
 .footer { background: #07080b; border-top: 1px solid var(--border); padding: 44px 0 30px; }
 .footer__inner { display: grid; gap: 22px; }
-.footer__brand { display: flex; align-items: center; gap: 14px; }
+.footer__brand { display: flex; align-items: center; gap: 16px; }
+.footer__logo { height: 58px; width: auto; }
 .footer__brand strong { display: block; font-family: "Oswald", sans-serif; text-transform: uppercase; letter-spacing: 0.3px; }
 .footer__brand p { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 22px; }
@@ -291,6 +295,8 @@ h1, h2, h3 {
   .form__row { grid-template-columns: 1fr; }
   .gallery { columns: 2 150px; }
   .platband__list i { margin: 0 7px; }
+  .brand__tag { display: none; }
+  .brand__logo { height: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
