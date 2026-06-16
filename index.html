@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Precision Ratchet | Nissan &amp; Infiniti VQ Specialist — Phoenix, AZ</title>
-  <meta name="description" content="Precision Ratchet is Phoenix's Nissan & Infiniti specialist — VQ35 / VQ37 engine repair, CVT & transmission service, performance builds, and factory-level diagnostics for 350Z, 370Z, G35, G37, Q50, Maxima & more." />
-  <meta name="theme-color" content="#0b0c10" />
+  <meta name="description" content="Precision Ratchet is Phoenix's trusted Nissan & Infiniti specialist — VQ35 / VQ37 engine repair, CVT & transmission service, performance builds, and factory-level diagnostics for 350Z, 370Z, G35, G37, Q50, Maxima & more. Schedule your appointment today." />
+  <meta name="theme-color" content="#0a1f3c" />
 
   <meta property="og:title" content="Precision Ratchet | Nissan & Infiniti VQ Specialist — Phoenix, AZ" />
-  <meta property="og:description" content="VQ experts in Phoenix. Engine repair, CVT service, performance builds & honest diagnostics for Nissan & Infiniti — 350Z, 370Z, G35, G37, Q50, Maxima." />
+  <meta property="og:description" content="Phoenix's trusted VQ experts. Engine repair, CVT service, performance builds & honest diagnostics for Nissan & Infiniti — 350Z, 370Z, G35, G37, Q50, Maxima." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/shop-front.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon.png" />
@@ -45,8 +45,11 @@
 <body>
   <div class="topbar">
     <div class="container topbar__inner">
-      <span class="topbar__item">🏁 Nissan &amp; Infiniti specialists — VQ diagnostics, repair &amp; performance</span>
-      <a class="topbar__phone" href="tel:+16025550142">📞 (602) 555-0142</a>
+      <div class="topbar__group">
+        <span class="topbar__item topbar__item--hours">🕖 Mon–Fri 7am–6pm · Sat 8am–2pm</span>
+        <span class="topbar__item">📍 2480 W Camelback Rd, Phoenix, AZ</span>
+      </div>
+      <a class="topbar__item topbar__phone" href="tel:+16025550142">📞 (602) 555-0142</a>
     </div>
   </div>
 
@@ -61,10 +64,11 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
         <a href="#builds">Builds</a>
         <a href="#about">About</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact" class="btn btn--sm btn--primary nav__cta">Book Now</a>
+        <a href="#contact" class="btn btn--sm btn--primary nav__cta">Schedule Appointment</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -73,104 +77,151 @@
   </header>
 
   <main>
-    <!-- Hero (split) -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="hero__eyebrow">Nissan &amp; Infiniti · VQ Specialists</p>
-          <h1 class="hero__title">We speak<br /><span class="accent">fluent VQ.</span></h1>
+          <p class="hero__eyebrow">🏁 Phoenix's Nissan &amp; Infiniti VQ specialists</p>
+          <h1 class="hero__title">The Valley's home for<br /><span class="accent">Nissan &amp; Infiniti.</span></h1>
           <p class="hero__sub">
             From 350Z and G37 to Maxima and Q50, the VQ is what we live and breathe.
-            Engine work, CVTs, performance builds, and honest diagnostics — from a
-            Phoenix crew that actually knows your platform.
+            Honest diagnostics, dealer-level know-how, and performance builds done
+            right — from a Phoenix crew that actually knows your platform.
           </p>
           <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary btn--lg">Book an Appointment</a>
-            <a href="tel:+16025550142" class="btn btn--ghost btn--lg">Call (602) 555-0142</a>
+            <a href="#contact" class="btn btn--primary btn--lg">Schedule Appointment</a>
+            <a href="tel:+16025550142" class="btn btn--ghost btn--lg">📞 (602) 555-0142</a>
           </div>
-          <p class="hero__meta">⭐ 4.9 rating · ASE-certified · VQ35 / VQ37 / VHR specialists</p>
+          <div class="hero__trust">
+            <span>⭐ <b>4.9</b> rating</span>
+            <span>🔧 <b>ASE</b>-certified techs</span>
+            <span>🛡️ <b>24/24</b> warranty</span>
+          </div>
         </div>
         <div class="hero__media">
-          <img src="assets/images/shop-front.webp" width="1000" height="1321"
-               alt="Two built Nissan and Infiniti cars parked outside the Precision Ratchet shop in Phoenix" />
-          <span class="hero__tag">The shop · Phoenix, AZ</span>
+          <div class="hero__frame">
+            <img src="assets/images/shop-front.webp" width="1000" height="1321"
+                 alt="Two built Nissan and Infiniti cars parked outside the Precision Ratchet shop in Phoenix" />
+          </div>
+          <div class="infocard">
+            <p class="infocard__title">Visit the shop</p>
+            <div class="infocard__row"><span class="ic">📍</span><span><b>2480 W Camelback Rd</b><br />Phoenix, AZ 85015</span></div>
+            <div class="infocard__row"><span class="ic">🕖</span><span>Mon–Fri 7am–6pm<br />Sat 8am–2pm · Sun closed</span></div>
+            <a href="#contact" class="btn btn--primary btn--sm btn--block">Book your VQ in</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Stat marquee (borderless) -->
-    <section class="marquee">
-      <div class="container marquee__inner">
-        <span><strong>15+</strong> years on the platform</span>
-        <span><strong>6k+</strong> Nissans &amp; Infinitis serviced</span>
-        <span><strong>VQ</strong> specialist techs</span>
-        <span><strong>24/24</strong> month / mile warranty</span>
+    <!-- Benefit pillars -->
+    <section class="pillars" id="why">
+      <div class="container">
+        <div class="pillars__grid">
+          <div class="pillar">
+            <div class="pillar__badge">⚡</div>
+            <h3>Fast, honest turnaround</h3>
+            <p>Clear quotes up front and quick scheduling — we fix the root cause, no parts-cannon guesswork.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__badge">🛡️</div>
+            <h3>24 month / 24k warranty</h3>
+            <p>Every repair is backed by our nationwide 24-month, 24,000-mile parts &amp; labor warranty.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__badge">💳</div>
+            <h3>Financing available</h3>
+            <p>Flexible financing on bigger jobs and builds, so your VQ gets done right without the wait.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Services as feature rows -->
+    <!-- Welcome band -->
+    <section class="welcome">
+      <div class="container welcome__grid">
+        <div>
+          <p class="welcome__eyebrow">Welcome to Precision Ratchet</p>
+          <h2>A Phoenix shop built around the VQ</h2>
+          <p>Precision Ratchet started with a couple of Nissan and Infiniti enthusiasts
+            and a stack of Zs and Gs that needed doing right. That's still all we do —
+            and we treat every car like it's parked in our own garage.</p>
+          <p>From oil-consumption fixes and timing chains to CVT service and full
+            performance builds, our techs work the VQ platform every single day — with
+            the same factory diagnostic tools as the dealer, minus the runaround.</p>
+        </div>
+        <div class="welcome__stats">
+          <div class="welcome__stat"><strong>15+</strong><span>Years on the platform</span></div>
+          <div class="welcome__stat"><strong>6k+</strong><span>Nissans &amp; Infinitis serviced</span></div>
+          <div class="welcome__stat"><strong>4.9★</strong><span>Average owner rating</span></div>
+          <div class="welcome__stat"><strong>VQ</strong><span>Specialist techs only</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
     <section class="section" id="services">
       <div class="container">
-        <div class="section__head section__head--left">
+        <div class="section__head">
           <p class="section__eyebrow">What we do</p>
           <h2 class="section__title">Specialist service for Nissan &amp; Infiniti</h2>
+          <p class="section__lead">Everything your VQ needs under one roof — from honest repairs to full
+            performance builds, all done by techs who live on this platform.</p>
         </div>
-      </div>
 
-      <div class="container feature">
-        <div class="feature__media">
-          <img src="assets/images/vq-engine.webp" width="1000" height="1926" loading="lazy"
-               alt="A VQ engine pulled and on a stand next to a car on the lift at Precision Ratchet" />
-        </div>
-        <div class="feature__copy">
-          <span class="feature__no">01</span>
-          <h3>VQ engine service &amp; rebuilds</h3>
-          <p>Timing chain rattle, oil consumption, valve cover and gasket leaks, or a
-            full rebuild — the VQ35 and VQ37 are our home turf. We fix the root cause,
-            not just the code.</p>
-          <ul class="feature__list">
-            <li>Timing chain &amp; guides</li>
-            <li>Oil-consumption diagnosis &amp; repair</li>
-            <li>Full VQ35 / VQ37 rebuilds</li>
-          </ul>
-        </div>
-      </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card__media">
+              <span class="card__no">1</span>
+              <img src="assets/images/vq-engine.webp" width="1000" height="1926" loading="lazy"
+                   alt="A VQ engine pulled and on a stand next to a car on the lift at Precision Ratchet" />
+            </div>
+            <div class="card__body">
+              <h3>VQ engine service &amp; rebuilds</h3>
+              <p>Timing chain rattle, oil consumption, gasket leaks, or a full rebuild — the VQ35 and VQ37 are our home turf.</p>
+              <ul class="card__list">
+                <li>Timing chain &amp; guides</li>
+                <li>Oil-consumption diagnosis &amp; repair</li>
+                <li>Full VQ35 / VQ37 rebuilds</li>
+              </ul>
+              <a href="#contact" class="card__cta">Schedule service →</a>
+            </div>
+          </article>
 
-      <div class="container feature feature--reverse">
-        <div class="feature__media">
-          <img src="assets/images/build-350z-silver.webp" width="1000" height="1837" loading="lazy"
-               alt="Silver Nissan 350Z with the hood up for a performance build at Precision Ratchet" />
-        </div>
-        <div class="feature__copy">
-          <span class="feature__no">02</span>
-          <h3>Performance &amp; builds</h3>
-          <p>Bolt-ons to full builds — intakes, exhausts, plenum spacers, forced
-            induction, and ECU tuning to wake up your VQ. Street-driven or
-            track-focused, we build it to last.</p>
-          <ul class="feature__list">
-            <li>Intake, exhaust &amp; bolt-on packages</li>
-            <li>Forced induction &amp; supporting mods</li>
-            <li>ECU tuning &amp; dyno</li>
-          </ul>
-        </div>
-      </div>
+          <article class="card">
+            <div class="card__media">
+              <span class="card__no">2</span>
+              <img src="assets/images/build-350z-silver.webp" width="1000" height="1837" loading="lazy"
+                   alt="Silver Nissan 350Z with the hood up for a performance build at Precision Ratchet" />
+            </div>
+            <div class="card__body">
+              <h3>Performance &amp; builds</h3>
+              <p>Bolt-ons to full builds — intakes, exhausts, forced induction, and ECU tuning to wake up your VQ and make it last.</p>
+              <ul class="card__list">
+                <li>Intake, exhaust &amp; bolt-on packages</li>
+                <li>Forced induction &amp; supporting mods</li>
+                <li>ECU tuning &amp; dyno</li>
+              </ul>
+              <a href="#contact" class="card__cta">Plan your build →</a>
+            </div>
+          </article>
 
-      <div class="container feature">
-        <div class="feature__media">
-          <img src="assets/images/build-g37-lift.webp" width="1000" height="1407" loading="lazy"
-               alt="Black Infiniti G37 up on the lift for repair at Precision Ratchet" />
-        </div>
-        <div class="feature__copy">
-          <span class="feature__no">03</span>
-          <h3>Repair &amp; factory diagnostics</h3>
-          <p>CONSULT-level scanning for Nissan and Infiniti means real fault tracing,
-            not parts-cannon guesswork. CVT service, brakes, suspension, A/C and
-            cooling — all done right.</p>
-          <ul class="feature__list">
-            <li>CVT &amp; transmission service</li>
-            <li>Brakes, suspension &amp; alignment</li>
-            <li>A/C &amp; cooling (built for Phoenix heat)</li>
-          </ul>
+          <article class="card">
+            <div class="card__media">
+              <span class="card__no">3</span>
+              <img src="assets/images/build-g37-lift.webp" width="1000" height="1407" loading="lazy"
+                   alt="Black Infiniti G37 up on the lift for repair at Precision Ratchet" />
+            </div>
+            <div class="card__body">
+              <h3>Repair &amp; factory diagnostics</h3>
+              <p>CONSULT-level scanning means real fault tracing. CVT service, brakes, suspension, A/C and cooling — all done right.</p>
+              <ul class="card__list">
+                <li>CVT &amp; transmission service</li>
+                <li>Brakes, suspension &amp; alignment</li>
+                <li>A/C &amp; cooling (built for Phoenix heat)</li>
+              </ul>
+              <a href="#contact" class="card__cta">Book a diagnostic →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -184,9 +235,9 @@
     </section>
 
     <!-- Builds gallery -->
-    <section class="section" id="builds">
+    <section class="section section--soft" id="builds">
       <div class="container">
-        <div class="section__head section__head--left">
+        <div class="section__head">
           <p class="section__eyebrow">In the shop</p>
           <h2 class="section__title">Builds &amp; work in progress</h2>
           <p class="section__lead">Real cars, real work — straight off our lifts. Tap any photo to enlarge.</p>
@@ -202,30 +253,37 @@
       </div>
     </section>
 
-    <!-- About (photo-backed) -->
-    <section class="about" id="about">
+    <!-- About -->
+    <section class="section" id="about">
       <div class="container about__grid">
         <div class="about__media">
-          <img src="assets/images/shop-sign.webp" width="1000" height="1774" loading="lazy"
-               alt="Precision Ratchet Nissan and Infiniti auto repair sign at the shop entrance" />
+          <div class="about__frame">
+            <img src="assets/images/shop-sign.webp" width="1000" height="1774" loading="lazy"
+                 alt="Precision Ratchet Nissan and Infiniti auto repair sign at the shop entrance" />
+          </div>
+          <div class="about__badge"><strong>15+</strong><span>Years on<br />the VQ</span></div>
         </div>
         <div class="about__copy">
           <p class="section__eyebrow">About the shop</p>
-          <h2 class="section__title">A Phoenix shop built around the VQ</h2>
-          <p>Precision Ratchet started with a couple of Nissan and Infiniti enthusiasts
-            and a stack of Zs and Gs that needed doing right. That's still all we do.</p>
-          <p>From oil-consumption fixes and timing chains to CVT service and full
-            performance builds, our techs work the VQ platform every day — with the
-            same factory diagnostic tools as the dealer, minus the runaround.</p>
+          <h2 class="section__title">Family-run, VQ-obsessed, Phoenix-proud</h2>
+          <p>We're enthusiasts first. Every Z, G, Q and Maxima that rolls in gets the
+            same care we'd give our own — straight answers, fair pricing, and work that
+            holds up in the Arizona heat.</p>
+          <ul class="about__points">
+            <li>Factory-level Nissan &amp; Infiniti diagnostic tools</li>
+            <li>VQ35 / VQ37 / VHR specialists — not generalists</li>
+            <li>24-month / 24,000-mile nationwide warranty</li>
+            <li>Clear estimates before any work begins</li>
+          </ul>
           <a href="#contact" class="btn btn--primary">Bring us your build</a>
         </div>
       </div>
     </section>
 
-    <!-- Reviews (borderless) -->
-    <section class="section" id="reviews">
+    <!-- Reviews -->
+    <section class="section section--soft" id="reviews">
       <div class="container">
-        <div class="section__head section__head--left">
+        <div class="section__head">
           <p class="section__eyebrow">From our customers</p>
           <h2 class="section__title">Rated 4.9 by Nissan &amp; Infiniti owners</h2>
         </div>
@@ -233,17 +291,17 @@
           <figure>
             <div class="quotes__stars">★★★★★</div>
             <blockquote>My G37's timing chain rattle is gone and they walked me through every part. Only shop in Phoenix I trust with the VQ.</blockquote>
-            <figcaption>Dana P. · Infiniti G37</figcaption>
+            <figcaption><b>Dana P.</b> · Infiniti G37</figcaption>
           </figure>
           <figure>
             <div class="quotes__stars">★★★★★</div>
             <blockquote>The CVT in my Maxima was slipping. They serviced it for far less than the dealer quoted and it's been flawless since.</blockquote>
-            <figcaption>Luis G. · Nissan Maxima</figcaption>
+            <figcaption><b>Luis G.</b> · Nissan Maxima</figcaption>
           </figure>
           <figure>
             <div class="quotes__stars">★★★★★</div>
             <blockquote>Did a full bolt-on package and tune on my 350Z. Clean work, dyno sheet, fair price. These guys genuinely get it.</blockquote>
-            <figcaption>Sarah K. · Nissan 350Z</figcaption>
+            <figcaption><b>Sarah K.</b> · Nissan 350Z</figcaption>
           </figure>
         </div>
       </div>
@@ -254,18 +312,19 @@
       <div class="container contact__grid">
         <div class="contact__info">
           <p class="section__eyebrow">Get in touch</p>
-          <h2 class="section__title">Book your VQ in today</h2>
+          <h2 class="section__title">Schedule your appointment</h2>
           <p class="section__lead">Tell us what your Nissan or Infiniti is doing and we'll get you
             scheduled. Prefer to talk it through? Call us — we pick up.</p>
           <ul class="contact__list">
-            <li><span>📍</span> 2480 W Camelback Rd, Phoenix, AZ 85015</li>
-            <li><span>📞</span> <a href="tel:+16025550142">(602) 555-0142</a></li>
-            <li><span>✉️</span> <a href="mailto:service@precisionratchet.com">service@precisionratchet.com</a></li>
-            <li><span>🕖</span> Mon–Fri 7am–6pm · Sat 8am–2pm · Sun closed</li>
+            <li><span class="ic">📍</span><span><b>Visit us</b> 2480 W Camelback Rd, Phoenix, AZ 85015</span></li>
+            <li><span class="ic">📞</span><span><b>Call</b> <a href="tel:+16025550142">(602) 555-0142</a></span></li>
+            <li><span class="ic">✉️</span><span><b>Email</b> <a href="mailto:service@precisionratchet.com">service@precisionratchet.com</a></span></li>
+            <li><span class="ic">🕖</span><span><b>Hours</b> Mon–Fri 7am–6pm · Sat 8am–2pm · Sun closed</span></li>
           </ul>
         </div>
 
         <form class="form" id="bookingForm" novalidate>
+          <p class="form__title">Request your appointment</p>
           <div class="form__row">
             <label>Name
               <input type="text" name="name" required placeholder="Jane Driver" />
@@ -291,7 +350,7 @@
           <label>What's it doing?
             <textarea name="message" rows="3" placeholder="Symptom, mod, or service you need — codes, sounds, mileage all help"></textarea>
           </label>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">Request Appointment</button>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Schedule Appointment</button>
           <p class="form__note" id="formNote" role="status"></p>
         </form>
       </div>
@@ -299,21 +358,39 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img class="footer__logo" src="assets/images/logo.webp" width="458" height="275" alt="Precision Ratchet emblem" />
-        <div>
-          <strong>Precision Ratchet</strong>
-          <p>Nissan &amp; Infiniti Specialist · 2480 W Camelback Rd, Phoenix, AZ 85015</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/images/logo.webp" width="458" height="275" alt="Precision Ratchet emblem" />
+          <div>
+            <strong>Precision Ratchet</strong>
+            <p>Phoenix's trusted Nissan &amp; Infiniti VQ specialist — honest repairs, dealer-level diagnostics, and performance builds done right.</p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">◎</a>
+              <a href="#" aria-label="Yelp">y</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">VQ engine &amp; rebuilds</a></li>
+            <li><a href="#services">Performance &amp; builds</a></li>
+            <li><a href="#services">CVT &amp; transmission</a></li>
+            <li><a href="#services">Factory diagnostics</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Visit us</h4>
+          <ul>
+            <li>2480 W Camelback Rd</li>
+            <li>Phoenix, AZ 85015</li>
+            <li><a href="tel:+16025550142">(602) 555-0142</a></li>
+            <li>Mon–Fri 7am–6pm · Sat 8am–2pm</li>
+          </ul>
         </div>
       </div>
-      <nav class="footer__nav">
-        <a href="#services">Services</a>
-        <a href="#builds">Builds</a>
-        <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </nav>
       <p class="footer__copy">© <span id="year"></span> Precision Ratchet · Nissan &amp; Infiniti VQ specialists · Phoenix, AZ · Demo site</p>
     </div>
   </footer>

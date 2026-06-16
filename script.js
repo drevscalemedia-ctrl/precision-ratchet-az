@@ -26,17 +26,29 @@
 
   // Scroll reveal
   var revealEls = document.querySelectorAll(
-    ".feature, .gallery__item, .about__media, .about__copy, .quotes figure, .contact__info, .form, .section__head"
+    ".pillar, .card, .welcome__stat, .gallery__item, .about__media, .about__copy, .quotes figure, .contact__info, .form, .section__head"
   );
   revealEls.forEach(function (el) { el.classList.add("reveal"); });
+
+  // Staggered cascade for photo grids
+  function stagger(selector, step, max) {
+    document.querySelectorAll(selector).forEach(function (el, i) {
+      el.style.transitionDelay = Math.min(i, max) * step + "s";
+    });
+  }
+  stagger("#gallery .gallery__item", 0.07, 6);
+  stagger(".cards .card", 0.1, 3);
 
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
+            var el = entry.target;
+            el.classList.add("is-visible");
+            // Clear the stagger delay once revealed so hover effects stay snappy
+            window.setTimeout(function () { el.style.transitionDelay = ""; }, 800);
+            io.unobserve(el);
           }
         });
       },
