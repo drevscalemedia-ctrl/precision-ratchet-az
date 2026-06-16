@@ -1,4 +1,4 @@
-/* Precision Ratchet Auto Repair — interactions */
+/* Precision Ratchet — Nissan & Infiniti VQ Specialist — interactions */
 (function () {
   "use strict";
 
@@ -15,7 +15,6 @@
       navToggle.classList.toggle("is-open", open);
       navToggle.setAttribute("aria-expanded", String(open));
     });
-    // Close menu after tapping a link
     nav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         nav.classList.remove("is-open");
@@ -27,7 +26,7 @@
 
   // Scroll reveal
   var revealEls = document.querySelectorAll(
-    ".card, .review, .why__copy, .why__panel, .about__copy, .about__media, .contact__info, .form, .strip__item"
+    ".feature, .gallery__item, .about__media, .about__copy, .quotes figure, .contact__info, .form, .section__head"
   );
   revealEls.forEach(function (el) { el.classList.add("reveal"); });
 
@@ -41,11 +40,47 @@
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  // Lightbox for builds gallery
+  var gallery = document.getElementById("gallery");
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImg");
+  var lightboxClose = document.getElementById("lightboxClose");
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  if (gallery && lightbox) {
+    gallery.addEventListener("click", function (e) {
+      var img = e.target.closest(".gallery__item img");
+      if (img) openLightbox(img.currentSrc || img.src, img.alt);
+    });
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeLightbox();
+    });
   }
 
   // Booking form (demo — no backend)
@@ -63,7 +98,6 @@
         note.className = "form__note is-err";
         return;
       }
-
       note.textContent =
         "Thanks, " + name + "! This is a demo form — call (602) 555-0142 to confirm your appointment.";
       note.className = "form__note is-ok";
