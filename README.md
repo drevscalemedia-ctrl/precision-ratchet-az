@@ -1,7 +1,8 @@
-# Precision Ratchet Auto Repair — Phoenix, AZ
+# Precision Ratchet — Nissan & Infiniti Specialist (Phoenix, AZ)
 
-A demo marketing website for a fictional full-service auto repair shop in
-Phoenix, Arizona. Built as a fast, dependency-free static site.
+A demo marketing website for a fictional Nissan & Infiniti specialist shop in
+Phoenix, Arizona — focused on the **VQ** engine platform (350Z, 370Z, G35,
+G37, Q50, Maxima, and more). Built as a fast, dependency-free static site.
 
 ## Stack
 
