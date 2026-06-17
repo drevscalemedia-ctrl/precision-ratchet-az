@@ -5,27 +5,29 @@
    ============================================================ */
 
 :root {
-  --navy: #15273f;
-  --navy-deep: #0c1830;
-  --navy-soft: #1d3358;
-  --red: #e8313a;
-  --red-dark: #c8242c;
-  --red-tint: rgba(232, 49, 58, 0.14);
-  --bg: #0a111e;
-  --bg-soft: #0e1726;
-  --bg-band: #0e1726;
-  --surface: #131f33;
-  --border: #243247;
+  /* Blue + black professional palette.
+     NOTE: the --red* names are kept for low churn but now hold BLUE values. */
+  --navy: #0f2b50;        /* blue band (welcome) */
+  --navy-deep: #081120;   /* deepest blue-black (topbar / platband / footer) */
+  --navy-soft: #1b3a63;
+  --red: #3b82f6;         /* accent — blue */
+  --red-dark: #2563eb;
+  --red-tint: rgba(59, 130, 246, 0.15);
+  --bg: #06080d;          /* near black */
+  --bg-soft: #0b0e15;
+  --bg-band: #0b0e15;
+  --surface: #111722;
+  --border: #212a39;
   --text: #e7edf7;
-  --ink: #f3f7fd;
+  --ink: #f4f7fd;
   --muted: #93a1ba;
   --star: #f5a623;
   --radius: 14px;
   --radius-lg: 22px;
   --radius-pill: 999px;
-  --shadow-sm: 0 6px 18px -10px rgba(14, 42, 79, 0.25);
-  --shadow: 0 22px 50px -26px rgba(14, 42, 79, 0.38);
-  --shadow-lg: 0 34px 70px -30px rgba(14, 42, 79, 0.45);
+  --shadow-sm: 0 6px 18px -10px rgba(0, 0, 0, 0.5);
+  --shadow: 0 22px 50px -26px rgba(0, 0, 0, 0.62);
+  --shadow-lg: 0 34px 70px -30px rgba(0, 0, 0, 0.7);
   --maxw: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -63,7 +65,7 @@ h1, h2, h3, h4 {
   white-space: nowrap; font-family: inherit;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--primary { background: var(--red); color: #fff; box-shadow: 0 14px 30px -12px rgba(216, 35, 42, 0.6); }
+.btn--primary { background: var(--red); color: #fff; box-shadow: 0 14px 30px -12px rgba(37, 99, 235, 0.6); }
 .btn--primary:hover { background: var(--red-dark); }
 .btn--navy { background: var(--navy); color: #fff; }
 .btn--navy:hover { background: var(--navy-deep); }
@@ -81,7 +83,7 @@ h1, h2, h3, h4 {
 .topbar__item { display: inline-flex; align-items: center; gap: 7px; }
 .topbar__group { display: flex; align-items: center; gap: 22px; }
 .topbar a { color: #fff; font-weight: 600; }
-.topbar a:hover { color: #ffd2d4; }
+.topbar a:hover { color: #cfe0ff; }
 
 /* ---------- Header ---------- */
 .header {
@@ -107,7 +109,7 @@ h1, h2, h3, h4 {
 .hero {
   position: relative;
   background:
-    radial-gradient(820px 460px at 88% -10%, rgba(232,49,58,0.16), transparent 62%),
+    radial-gradient(820px 460px at 88% -10%, rgba(59,130,246,0.20), transparent 62%),
     linear-gradient(180deg, #0b1322 0%, var(--bg) 100%);
   overflow: hidden;
 }
@@ -181,7 +183,7 @@ h1, h2, h3, h4 {
   width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 16px;
   display: grid; place-items: center; font-size: 1.6rem;
   background: var(--red-tint); color: var(--red);
-  box-shadow: 0 10px 22px -12px rgba(216,35,42,0.7);
+  box-shadow: 0 10px 22px -12px rgba(37,99,235,0.7);
 }
 .pillar h3 { font-size: 1.18rem; margin-bottom: 8px; font-weight: 700; }
 .pillar p { color: var(--muted); margin: 0; font-size: 0.96rem; }
@@ -200,10 +202,10 @@ h1, h2, h3, h4 {
 .welcome { background: var(--navy); color: #e7eefb; padding: 78px 0; position: relative; overflow: hidden; }
 .welcome::before {
   content: ""; position: absolute; right: -120px; top: -120px; width: 360px; height: 360px;
-  background: radial-gradient(circle, rgba(216,35,42,0.28), transparent 68%);
+  background: radial-gradient(circle, rgba(59,130,246,0.30), transparent 68%);
 }
 .welcome__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; position: relative; }
-.welcome__eyebrow { text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.76rem; font-weight: 700; color: #ff7b80; margin: 0 0 12px; }
+.welcome__eyebrow { text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.76rem; font-weight: 700; color: #7eb0ff; margin: 0 0 12px; }
 .welcome h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 16px; font-weight: 700; }
 .welcome p { color: #c2d2ec; margin: 0 0 16px; font-size: 1.04rem; }
 .welcome__stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -229,7 +231,7 @@ h1, h2, h3, h4 {
   position: absolute; top: 14px; left: 14px; width: 38px; height: 38px; border-radius: 50%;
   display: grid; place-items: center; background: var(--red); color: #fff;
   font-family: "Poppins", sans-serif; font-weight: 700; font-size: 0.95rem;
-  box-shadow: 0 10px 22px -10px rgba(216,35,42,0.8); z-index: 3;
+  box-shadow: 0 10px 22px -10px rgba(37,99,235,0.8); z-index: 3;
 }
 .card__body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
 .card__body h3 { font-size: 1.28rem; margin-bottom: 10px; font-weight: 700; }
@@ -244,7 +246,7 @@ h1, h2, h3, h4 {
 
 /* ---------- Platform band ---------- */
 .platband { background: var(--navy-deep); color: #fff; padding: 38px 0; text-align: center; }
-.platband__label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.74rem; font-weight: 700; color: #ff7b80; margin: 0 0 14px; }
+.platband__label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.74rem; font-weight: 700; color: #7eb0ff; margin: 0 0 14px; }
 .platband__list { font-family: "Poppins", sans-serif; font-weight: 600; font-size: clamp(1.05rem, 2.2vw, 1.55rem); margin: 0; line-height: 1.7; color: #eaf1fc; }
 .platband__list i { color: var(--red); font-style: normal; margin: 0 11px; }
 
@@ -320,7 +322,7 @@ h1, h2, h3, h4 {
 }
 .form input::placeholder, .form textarea::placeholder { color: #9aa7bd; }
 .form input:focus, .form select:focus, .form textarea:focus {
-  outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(216,35,42,0.16);
+  outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(59,130,246,0.18);
 }
 .form textarea { resize: vertical; }
 .form__note { margin: 0; font-size: 0.9rem; font-weight: 600; min-height: 1.2em; }
@@ -347,7 +349,7 @@ h1, h2, h3, h4 {
 .callfab {
   position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; display: none;
   place-items: center; background: var(--red); color: #fff; border-radius: 50%;
-  box-shadow: 0 14px 30px -10px rgba(216,35,42,0.8); z-index: 60;
+  box-shadow: 0 14px 30px -10px rgba(37,99,235,0.8); z-index: 60;
 }
 
 /* ---------- Lightbox ---------- */
