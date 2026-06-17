@@ -346,7 +346,7 @@ h1, h2, h3, h4 {
 /* ---------- Floating call button ---------- */
 .callfab {
   position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; display: none;
-  place-items: center; background: var(--red); border-radius: 50%; font-size: 1.4rem;
+  place-items: center; background: var(--red); color: #fff; border-radius: 50%;
   box-shadow: 0 14px 30px -10px rgba(216,35,42,0.8); z-index: 60;
 }
 
@@ -368,35 +368,29 @@ h1, h2, h3, h4 {
 
 /* ---------- Text animations ---------- */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(44px); }
+  from { opacity: 0; transform: translateY(26px); }
   to   { opacity: 1; transform: none; }
 }
-/* Hero copy staggered entrance on load */
-.hero__copy > * { opacity: 0; animation: fadeUp 0.8s var(--ease) both; }
-.hero__eyebrow { animation-delay: 0.10s; }
-.hero__title   { animation-delay: 0.28s; }
-.hero__sub     { animation-delay: 0.48s; }
-.hero__actions { animation-delay: 0.66s; }
-.hero__trust   { animation-delay: 0.82s; }
+/* Hero copy: clean staggered entrance on load (no blur) */
+.hero__copy > * { opacity: 0; animation: fadeUp 0.7s var(--ease) both; }
+.hero__eyebrow { animation-delay: 0.06s; }
+.hero__title   { animation-delay: 0.18s; }
+.hero__sub     { animation-delay: 0.32s; }
+.hero__actions { animation-delay: 0.46s; }
+.hero__trust   { animation-delay: 0.58s; }
 
-/* Bright animated shimmer + glow pulse across the red accent words (always running) */
-.accent {
-  background: linear-gradient(100deg, var(--red) 0%, #ffd2d4 44%, #ffffff 50%, #ff9094 56%, var(--red) 78%);
-  background-size: 240% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-  animation: shimmer 3s linear infinite;
-}
-@keyframes shimmer { to { background-position: -240% 0; } }
-
-/* Word-by-word blur + rise for section titles when scrolled into view */
-.section__title .w, .welcome h2 .w {
-  display: inline-block; opacity: 0; transform: translateY(0.9em) scale(0.92);
-  filter: blur(8px);
-  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), filter 0.6s var(--ease);
-}
-.section__head.is-visible .section__title .w,
-.welcome__copy.is-visible h2 .w { opacity: 1; transform: none; filter: blur(0); }
+/* ---------- Inline SVG icons ---------- */
+.i { width: 1em; height: 1em; flex: none; vertical-align: -0.14em;
+     stroke-width: 1.75; }
+.topbar__item .i { width: 15px; height: 15px; }
+.hero__eyebrow .i { width: 15px; height: 15px; }
+.hero__trust .i { width: 18px; height: 18px; color: var(--red); }
+.hero__trust .i--star { color: var(--star); }
+.hero__actions .btn .i, .nav__cta .i { width: 18px; height: 18px; }
+.infocard__row .ic .i, .contact__list .ic .i { width: 19px; height: 19px; }
+.pillar__badge .i { width: 26px; height: 26px; }
+.callfab .i { width: 24px; height: 24px; }
+.footer__social a svg { width: 17px; height: 17px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
