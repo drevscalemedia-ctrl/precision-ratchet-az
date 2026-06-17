@@ -159,7 +159,7 @@
         return;
       }
       note.textContent =
-        "Thanks, " + name + "! This is a demo form — call (602) 555-0142 to confirm your appointment.";
+        "Thanks, " + name + "! To lock in your appointment fastest, call us at (602) 774-6227 — we'll confirm your time over the phone.";
       note.className = "form__note is-ok";
       form.reset();
     });
