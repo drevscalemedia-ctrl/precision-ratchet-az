@@ -6,6 +6,17 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Logo click → always smooth-scroll to the very top.
+  // (Anchoring to #top alone fails: it's the sticky header, which the browser
+  // treats as already in view, so no scroll happens.)
+  var brand = document.querySelector(".header .brand");
+  if (brand) {
+    brand.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   // Mobile nav toggle
   var navToggle = document.getElementById("navToggle");
   var nav = document.getElementById("nav");
