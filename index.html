@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
@@ -336,9 +336,38 @@
               <input type="tel" name="phone" required placeholder="(602) 555-0000" />
             </label>
           </div>
-          <label>Vehicle
-            <input type="text" name="vehicle" placeholder="2010 Infiniti G37" />
-          </label>
+          <div class="form__row form__row--3">
+            <label>Make
+              <select name="make">
+                <option value="">Make…</option>
+                <option>Nissan</option>
+                <option>Infiniti</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Model
+              <select name="model">
+                <option value="">Model…</option>
+                <option>350Z</option>
+                <option>370Z</option>
+                <option>Nissan Z</option>
+                <option>G35</option>
+                <option>G37</option>
+                <option>Q50</option>
+                <option>Q60</option>
+                <option>Maxima</option>
+                <option>Altima</option>
+                <option>Murano</option>
+                <option>Pathfinder</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Year
+              <select name="year" id="vehicleYear">
+                <option value="">Year…</option>
+              </select>
+            </label>
+          </div>
           <label>Service needed
             <select name="service">
               <option>VQ Engine Service</option>
@@ -406,6 +435,6 @@
     <img id="lightboxImg" src="" alt="" />
   </div>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

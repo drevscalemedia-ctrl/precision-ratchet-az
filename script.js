@@ -132,6 +132,17 @@
     });
   }
 
+  // Populate the vehicle Year dropdown (newest first, back to 1990)
+  var yearSelect = document.getElementById("vehicleYear");
+  if (yearSelect) {
+    var topYear = new Date().getFullYear() + 1; // include the upcoming model year
+    for (var yy = topYear; yy >= 1990; yy--) {
+      var opt = document.createElement("option");
+      opt.textContent = String(yy);
+      yearSelect.appendChild(opt);
+    }
+  }
+
   // Booking form (demo — no backend)
   var form = document.getElementById("bookingForm");
   var note = document.getElementById("formNote");
