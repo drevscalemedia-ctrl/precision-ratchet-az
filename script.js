@@ -34,7 +34,7 @@
       var span = document.createElement("span");
       span.className = "w";
       span.textContent = word;
-      span.style.transitionDelay = i * 0.06 + "s";
+      span.style.transitionDelay = i * 0.11 + "s";
       title.appendChild(span);
       if (i < words.length - 1) title.appendChild(document.createTextNode(" "));
     });
