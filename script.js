@@ -6,31 +6,42 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Logo click → smoothly slide to the very top.
-  // We animate with requestAnimationFrame instead of scrollTo({behavior:"smooth"})
-  // because browsers force-disable native smooth scroll when the OS reports
-  // prefers-reduced-motion, which would make it snap instantly.
-  function slideToTop(duration) {
-    var start = window.pageYOffset || document.documentElement.scrollTop;
-    if (start <= 0) return;
+  // Smooth in-page scrolling for every hash link (top nav, logo, CTA buttons).
+  // Driven by requestAnimationFrame instead of native smooth scroll, because
+  // browsers force-disable scrollTo({behavior:"smooth"}) / CSS smooth scroll
+  // when the OS reports prefers-reduced-motion — which would make it snap.
+  var headerEl = document.querySelector(".header");
+  function animateScroll(toY, duration) {
+    var startY = window.pageYOffset || document.documentElement.scrollTop;
+    var dist = toY - startY;
+    if (Math.abs(dist) < 2) return;
     var startTime = null;
-    var dur = duration || 650;
-    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    var dur = duration || 900; // ~0.9s glide
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
     function step(ts) {
       if (startTime === null) startTime = ts;
       var t = Math.min((ts - startTime) / dur, 1);
-      window.scrollTo({ top: Math.round(start * (1 - easeOutCubic(t))), behavior: "auto" });
+      window.scrollTo({ top: Math.round(startY + dist * easeInOutCubic(t)), behavior: "auto" });
       if (t < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-  var brand = document.querySelector(".header .brand");
-  if (brand) {
-    brand.addEventListener("click", function (e) {
-      e.preventDefault();
-      slideToTop();
-    });
-  }
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var href = link.getAttribute("href");
+    if (href === "#") { e.preventDefault(); return; }          // placeholder links
+    if (href === "#top") { e.preventDefault(); animateScroll(0); return; } // logo → top
+    var target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    var offset = (headerEl ? headerEl.offsetHeight : 0) + 14;
+    var y = target.getBoundingClientRect().top +
+            (window.pageYOffset || document.documentElement.scrollTop) - offset;
+    animateScroll(Math.max(0, y));
+  });
 
   // Mobile nav toggle
   var navToggle = document.getElementById("navToggle");
