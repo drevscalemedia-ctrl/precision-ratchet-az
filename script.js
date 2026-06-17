@@ -6,14 +6,29 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Logo click → always smooth-scroll to the very top.
-  // (Anchoring to #top alone fails: it's the sticky header, which the browser
-  // treats as already in view, so no scroll happens.)
+  // Logo click → smoothly slide to the very top.
+  // We animate with requestAnimationFrame instead of scrollTo({behavior:"smooth"})
+  // because browsers force-disable native smooth scroll when the OS reports
+  // prefers-reduced-motion, which would make it snap instantly.
+  function slideToTop(duration) {
+    var start = window.pageYOffset || document.documentElement.scrollTop;
+    if (start <= 0) return;
+    var startTime = null;
+    var dur = duration || 650;
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    function step(ts) {
+      if (startTime === null) startTime = ts;
+      var t = Math.min((ts - startTime) / dur, 1);
+      window.scrollTo({ top: Math.round(start * (1 - easeOutCubic(t))), behavior: "auto" });
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   var brand = document.querySelector(".header .brand");
   if (brand) {
     brand.addEventListener("click", function (e) {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      slideToTop();
     });
   }
 
